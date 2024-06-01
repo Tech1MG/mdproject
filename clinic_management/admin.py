@@ -26,7 +26,7 @@ class MedicationItems(admin.TabularInline):
 class PatientAdmin (admin.ModelAdmin):
     list_display = ('name', 'age', 'birth_year', 'phone_num')
     search_fields = ['name', 'phone_num']
-    inlines = [AppointmentItems, HistoryItems, AllergyItems, MedicationItems]
+    inlines = [HistoryItems, AllergyItems, MedicationItems]
 
     # prepopulated_fields = {'birth_year': (1990, )}
 
@@ -54,7 +54,7 @@ class MedicationAdmin (admin.ModelAdmin):
 
 admin.site.register(Patient, PatientAdmin)
 admin.site.register(Appointment, AppointmentAdmin)
-admin.site.register(History, HistoryAdmin)
-admin.site.register(Allergy, AllergyAdmin)
-admin.site.register(Medication, MedicationAdmin)
+# admin.site.register(History, HistoryAdmin)
+# admin.site.register(Allergy, AllergyAdmin)
+# admin.site.register(Medication, MedicationAdmin)
 # admin.site.register(Diagnosis)
